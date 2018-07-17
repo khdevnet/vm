@@ -1,0 +1,399 @@
+.jira-table table thead {
+    background-color: grey;
+}
+
+.jira-table table tbody {
+    background-color: grey;
+}
+
+.jira-table table a {
+    color: white;
+    font-size: 1.5em;
+    text-decoration: none;
+    -webkit-text-decoration-line: none;
+            text-decoration-line: none;
+    -webkit-text-decoration-style: initial;
+            text-decoration-style: initial;
+    -webkit-text-decoration-color: initial;
+            text-decoration-color: initial;
+}
+
+.jira-table table td {
+    padding-top: 0.35rem;
+    padding-bottom: 0.35rem;
+}
+
+.jira-table table .btn {
+    font-weight: bold;
+}
+
+.btn-group {
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+}
+
+.jira-header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+}
+
+.jira-header .btn {
+    color: white;
+}
+
+.jira-content .progress {
+    height: 2rem;
+    font-size: 1vw;
+}
+
+.jira-content .progress .progress-bar {
+    padding-left: 0.5vw;
+    padding-right: 1vw;
+}
+
+.jira-content .btn-progress {
+    width: 100%;
+}
+
+.jira-content .btn-progress .btn {
+    width: 100%;
+}
+
+@media (min-width: 1200px) {
+    .jira-header .btn {
+        min-width: 125px;
+    }
+}
+.build-monitor .successful {
+    background-color: darkgreen;
+}
+
+.build-monitor .failure {
+    background-color: darkred;
+}
+
+.build-monitor .aborted {
+    background-color: grey;
+}
+
+.build-monitor #widgets {
+    -moz-flex: 1;
+    -ms-flex: 1;
+    -webkit-box-flex: 1;
+            flex: 1;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: -ms-flex;
+    display: -webkit-box;
+    display: flex;
+    -ms-flex-flow: row wrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+            flex-flow: row wrap;
+    -moz-justify-content: space-between;
+    -ms-justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    list-style-type: none;
+    padding: 0;
+    margin-left: -8px;
+}
+
+.build-monitor #widgets > li {
+    margin: 0 0 8px 8px;
+    min-width: 180px;
+}
+
+.build-monitor #widgets > li {
+    -moz-flex: 1;
+    -ms-flex: 1;
+    -webkit-box-flex: 1;
+            flex: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    overflow: visible;
+}
+
+.build-monitor .widget.basic.project {
+    -webkit-box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.5);
+    box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.5);
+}
+
+.build-monitor .widget.basic.project {
+    position: relative;
+    border-radius: 10px;
+    overflow-y: hidden;
+    min-height: 0px;
+    width: 100%;
+}
+
+.build-monitor #widgets header {
+    position: relative;
+    overflow: hidden;
+}
+
+.build-monitor #widgets header {
+    -moz-flex: 3 2 auto;
+    -ms-flex: 3 2 auto;
+    -webkit-box-flex: 3;
+            flex: 3 2 auto;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: -ms-flex;
+    display: -webkit-box;
+    display: flex;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
+    -moz-justify-content: flex-start;
+    -ms-justify-content: flex-start;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+}
+
+.build-monitor #widgets header h2 {
+    font-size: 1.2vw;
+}
+
+.build-monitor h2 {
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    margin: 0.5em 1em 0.5em 1em;
+    padding: 0;
+}
+
+.build-monitor #widgets > li {
+    margin: 0 0 8px 8px;
+}
+
+.build-monitor #widgets li a, .build-monitor #widgets li a:visited, .build-monitor #widgets li span, .build-monitor header > h1 > a {
+    color: white;
+    text-decoration: none;
+}
+
+.build-monitor #widgets header ul.details {
+    margin: 0.25em 0 0 0;
+    padding: 0;
+    list-style-type: none;
+    text-align: center;
+    color: white;
+}
+
+.build-monitor #widgets .slots {
+    -moz-flex: 2 3 auto;
+    -ms-flex: 2 3 auto;
+    -webkit-box-flex: 2;
+            flex: 2 3 auto;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: -ms-flex;
+    display: -webkit-box;
+    display: flex;
+    -moz-flex-direction: row;
+    -ms-flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+            flex-direction: row;
+}
+
+.build-monitor #widgets .slots .slot-1 {
+    text-align: left;
+    padding: 0 0 4px 8px;
+}
+
+.build-monitor #widgets .slots .slot {
+    -moz-flex: 1;
+    -ms-flex: 1;
+    -webkit-box-flex: 1;
+            flex: 1;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: -ms-flex;
+    display: -webkit-box;
+    display: flex;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
+    -moz-justify-content: flex-end;
+    -ms-justify-content: flex-end;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+}
+
+.build-monitor #widgets .slots .slot {
+    font-size: 1vw;
+    font-weight: bold;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.build-monitor #widgets .slot {
+    opacity: 0.3;
+}
+
+.build-monitor #widgets .slots .slot-2 {
+    text-align: right;
+    padding: 0 8px 4px 0;
+}
+
+@-webkit-keyframes blinker {
+    from {
+        opacity: 1.0;
+    }
+    to {
+        opacity: 0.6;
+    }
+}
+
+.text-index {
+    position: relative;
+    z-index: 3;
+    -moz-flex: 1;
+    -ms-flex: 1;
+    -webkit-box-flex: 1;
+            flex: 1 1 0%;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    -ms-flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
+    overflow: visible;
+}
+
+.progressbar {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+
+}
+
+.progressbar .frame {
+    width: 100%;
+    height: 100%;
+}
+
+.progressbar .frame .fill {
+    border-radius: 10px;
+
+    width: 80%; /* Change this if the progress changes */
+    height: 100%;
+
+    animation: progressbar 1s linear 0 infinite normal; /* Supported Browsers */
+    -webkit-animation: progressbar 1s linear 0 infinite normal; /* Safari / Chrome */
+    -moz-animation: progressbar 1s linear 0 infinite normal; /* FF */
+    -o-animation: progressbar 1s linear 0 infinite normal; /* Opera */
+
+    transition: width 0.5s linear;
+    -webkit-transition: width 0.5s linear;
+    -moz-transition: width 0.5s linear;
+    -o-transition: width 0.5s linear;
+}
+
+.basic.project.widget.successful.inprogress .fill {
+    background: forestgreen repeat top left;
+}
+
+.basic.project.widget.failure.inprogress .fill {
+    background: firebrick repeat top left;
+}
+
+.basic.project.widget.aborted.inprogress .fill {
+    background: #6c757d repeat top left;
+}
+
+.basic.project.widget.inprogress .fill {
+    text-decoration: blink;
+    -webkit-animation-name: blinker;
+    -webkit-animation-duration: 0.6s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-direction: alternate;
+}
+
+@keyframes progressbar {
+    0% {
+        background-position: 0px 0px;
+    }
+    100% {
+        background-position: 25px 0px;
+    }
+}
+
+@-webkit-keyframes progressbar {
+    0% {
+        background-position: 0px 0px;
+    }
+    100% {
+        background-position: 25px 0px;
+    }
+}.charts {
+    background-color: grey;
+    border-radius: 5px;
+}
+
+.chart-body {
+    background-color: grey;
+    border-radius:5px ;
+}
+
+.chart-body .title {
+    color: white;
+    text-align: center;
+}
+
+
+.chart-body .legend {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.chart-body .legend li {
+    list-style: none;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    padding: 0 5px 0 5px;
+}
+.chart-body .legend li .box{
+    width: 50px;
+    height: 25px;
+    margin-right: 5px;
+}
+.chart-body .legend li .label {
+    line-height: 21px;
+    font-size: 1vw;
+    color: white;
+}
+
+.chart-body .legend li .box.red {
+    background-color: darkred;
+}
+
+.chart-body .legend li .box.green {
+    background-color: darkgreen;
+}
+
+
+
