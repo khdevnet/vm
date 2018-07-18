@@ -63361,27 +63361,35 @@ var JiraResolveIssuesComponent = function (_Component) {
     _createClass(JiraResolveIssuesComponent, [{
         key: 'getIssues',
         value: function getIssues() {
-            var _this2 = this;
-
-            new _jira2.default().getIssuesByPeriod(this.prevMonthDate, this.currentDate).then(function (response) {
-                if (response) {
-                    _this2.state = _extends({}, _this2.state, {
-                        createdCount: response.created.length,
-                        resolvedCount: response.resolved.length,
-                        data: _this2.getChartData(response)
-                    });
-                    _this2.setState(_extends({}, _this2.state));
-                }
+            // new JiraService().getIssuesByPeriod(this.prevMonthDate, this.currentDate)
+            //     .then(response => {
+            //         if (response) {
+            //             this.state = {
+            //                 ...this.state,
+            //                 createdCount: response.created.length,
+            //                 resolvedCount: response.resolved.length,
+            //                 data: this.getChartData(response)
+            //             };
+            //             this.setState({
+            //                 ...this.state
+            //             });
+            //         }
+            //     });
+            this.state = _extends({}, this.state, {
+                createdCount: 100,
+                resolvedCount: 150,
+                data: this.getChartData({})
             });
+            this.setState(_extends({}, this.state));
         }
     }, {
         key: 'componentDidMount',
         value: function componentDidMount() {
-            var _this3 = this;
+            var _this2 = this;
 
             this.getIssues();
             var refreshIntervalId = setInterval(function () {
-                _this3.getIssues();
+                _this2.getIssues();
             }, 1000 * 60 * 5);
 
             this.setState({
@@ -63396,9 +63404,10 @@ var JiraResolveIssuesComponent = function (_Component) {
     }, {
         key: 'getChartData',
         value: function getChartData(data) {
-            var created = this.jiraChartIssuesConverter.groupIssuesByDateRange(data.created, this.prevMonthDate, this.currentDate, 'created');
-            var resolved = this.jiraChartIssuesConverter.groupIssuesByDateRange(data.resolved, this.prevMonthDate, this.currentDate, 'resolutiondate');
-
+            var created = { "18-June": 3, "19-June": 6, "20-June": 7, "21-June": 3, "22-June": 1, "23-June": 0, "24-June": 0, "25-June": 9, "26-June": 7, "27-June": 5, "28-June": 20, "29-June": 6, "30-June": 0, "01-July": 0, "02-July": 10, "03-July": 9, "04-July": 3, "05-July": 8, "06-July": 11, "07-July": 0, "08-July": 1, "09-July": 5, "10-July": 14, "11-July": 16, "12-July": 7, "13-July": 7, "14-July": 1, "15-July": 0, "16-July": 6, "17-July": 2, "18-July": 3 }; //this.jiraChartIssuesConverter.groupIssuesByDateRange(data.created, this.prevMonthDate, this.currentDate, 'created');
+            var resolved = { "18-June": 9, "19-June": 8, "20-June": 7, "21-June": 6, "22-June": 0, "23-June": 0, "24-June": 0, "25-June": 5, "26-June": 6, "27-June": 10, "28-June": 16, "29-June": 11, "30-June": 0, "01-July": 0, "02-July": 2, "03-July": 0, "04-July": 0, "05-July": 3, "06-July": 0, "07-July": 0, "08-July": 0, "09-July": 1, "10-July": 0, "11-July": 9, "12-July": 0, "13-July": 1, "14-July": 0, "15-July": 0, "16-July": 1, "17-July": 0, "18-July": 5 }; //this.jiraChartIssuesConverter.groupIssuesByDateRange(data.resolved, this.prevMonthDate, this.currentDate, 'resolutiondate');
+            console.log(JSON.stringify(created));
+            console.log(JSON.stringify(resolved));
             return {
                 labels: Object.keys(created),
                 datasets: [{
@@ -63746,7 +63755,7 @@ var App = function (_Component) {
                         widgets: [{ key: 'JiraBoardProgressWidget' }]
                     }, {
                         className: 'col-md-6 col-sm-6 col-xs-6',
-                        widgets: [{ key: 'JenkinsAllBuildsWidget' }]
+                        widgets: [{ key: 'JenkinsAllBuildsWidget' }, { key: 'JiraResolveIssuesWidget' }]
                     }]
                 }, {
                     columns: [{
@@ -63891,9 +63900,9 @@ module.bundle.Module = Module;
 
 var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
-  var hostname = '' || location.hostname;
+  var hostname = undefined || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '3852' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '8489' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
