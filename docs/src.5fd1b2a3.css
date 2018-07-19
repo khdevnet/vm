@@ -108,7 +108,7 @@
 .build-monitor #widgets > li {
     display: -webkit-box;
     display: -ms-flexbox;
-    display: inline-flex;
+    display: -webkit-inline-box;
     -webkit-box-flex: 1;
         -ms-flex: 1;
             flex: 1;
