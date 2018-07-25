@@ -39058,7 +39058,7 @@ var ChartComponent = function (_Component) {
 
 exports.default = ChartComponent;
 },{"babel-runtime/core-js/object/get-prototype-of":"56YS","babel-runtime/helpers/classCallCheck":"VDn3","babel-runtime/helpers/createClass":"wBFS","babel-runtime/helpers/possibleConstructorReturn":"8VS6","babel-runtime/helpers/inherits":"0Lf6","./styles.css":"gBoA","react":"u853","react-chartjs":"tW+C"}],"Hg0X":[function(require,module,exports) {
-module.exports = "/panel-loader.e3a53f33.svg";
+module.exports = "../vm/panel-loader.420de926.svg";
 },{}],"yhE9":[function(require,module,exports) {
 'use strict';
 
@@ -40238,12 +40238,6 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function renderBuilds(builds) {
-  return builds.map(function (build) {
-    return _react2.default.createElement(_build2.default, { key: shortid.generate(), data: build });
-  });
-}
-
 var JenkinsBuildsListComponent = function (_Component) {
   (0, _inherits3.default)(JenkinsBuildsListComponent, _Component);
 
@@ -40273,16 +40267,19 @@ var JenkinsBuildsListComponent = function (_Component) {
         jobNames: this.props.jobNames
       });
       this.dataLoaderJobSubscription = this.dataLoaderJob.start().subscribe(function (data) {
-        console.log(data);
+        console.log("dataLoaderJobSubscription ", data);
         _this2.state.builds = data.map(function (d) {
           return _this2.state.builds.find(function (b) {
             return b.displayName == d.displayName;
           }) || d;
         });
+        console.log(" this.state.builds ", _this2.state.builds);
+
         _this2.setState({
           builds: _this2.state.builds,
           isLoading: _this2.state.builds.length === 0
         });
+        console.log(" setState ", _this2.setState);
       }, function () {
         _this2.setState((0, _extends3.default)({}, _this2.state, {
           errorMessage: "Loading error..."
@@ -40296,9 +40293,16 @@ var JenkinsBuildsListComponent = function (_Component) {
       this.dataLoaderJob.dispose();
     }
   }, {
+    key: 'renderBuilds',
+    value: function renderBuilds(builds) {
+      return builds.map(function (build) {
+        return _react2.default.createElement(_build2.default, { key: shortid.generate(), data: build });
+      });
+    }
+  }, {
     key: 'render',
     value: function render() {
-      return _react2.default.createElement(_panelLoader2.default, { panel: renderBuilds(this.state.builds),
+      return _react2.default.createElement(_panelLoader2.default, { panel: this.renderBuilds(this.state.builds),
         isLoading: this.state.isLoading,
         errorMessage: this.state.errorMessage });
     }
@@ -54373,8 +54377,11 @@ var App = function (_Component) {
             className: 'col-md-6 col-sm-6 col-xs-6',
             widgets: [
             // {key: 'JenkinsAppiotCoreWidget'},
-            // {key: 'JenkinsLWM2MWidget'}
-            { key: 'JenkinsAllBuildsWidget' }]
+            { key: 'JenkinsLWM2MWidget'
+              //{key: 'JenkinsAllBuildsWidget'},
+              // {key: 'JiraSupportIssuesChartWidget', isCarousel: true},
+              // {key: 'JiraBugsChartWidget', isCarousel: true}
+            }]
           }]
         }, {
           columns: [{
@@ -54498,4 +54505,4 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 _reactDom2.default.render(_react2.default.createElement(_app2.default, null), document.getElementById('root'));
 },{"react":"u853","react-dom":"m5IH","./app":"0YMj"}]},{},["/fhF"], null)
-//# sourceMappingURL=/src.6e596edb.map
+//# sourceMappingURL=../vm/src.cd8228a1.map
